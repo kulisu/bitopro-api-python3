@@ -2,32 +2,26 @@
 
 ## Warning
 
-This is an UNOFFICIAL wrapper for BitoPro exchange [HTTP API v2](https://developer.bitopro.com/docs) written in Python 3.6
+This is an UNOFFICIAL wrapper for BitoPro exchange ~~[HTTP API v2](https://github.com/bitoex/bitopro-offical-api-docs/blob/master/v2/rest/rest.md)~~ written in Python 3.6
 
-USE THIS WRAPPER AT YOUR OWN RISK, I WILL NOT CORRESPOND TO ANY LOSES
+And this wrapper does not receive active maintainance, plaese consider using [CCXT](https://github.com/ccxt/ccxt/pull/5408)
+
+**USE THIS WRAPPER AT YOUR OWN RISK, I WILL NOT CORRESPOND TO ANY LOSES**
 
 ## Features
 
-- Implementation of all [public](https://developer.bitopro.com/docs#tag/public) and [private](https://developer.bitopro.com/docs#tag/authenticated) endpoints
-- Simple handling of [authentication](https://developer.bitopro.com/docs#section/Authentication/signature) with API key and secret
+- Implementation of all [public](https://github.com/bitoex/bitopro-offical-api-docs/tree/master/v2/rest/open) and [private](https://github.com/bitoex/bitopro-offical-api-docs/tree/master/v2/rest/auth) endpoints
+- Simple handling of [authentication](https://github.com/bitoex/bitopro-offical-api-docs/blob/master/v2/rest/authentication.md) with API key and secret
 - All HTTP raw requests and responses can be found [here](https://gist.github.com/kulisu/334854643c6351aa4b1a0a702d0bacd5)
 
-## Donate
+## Usage
 
-If you feel this wrapper saved your lifes, buy me a coffee ?
-
-- BITO: 0x70ef948a346f96ce2929d00e389607b11e99f219
-- BTC: 12axXPJG5KGsHGUdsiSmSFyh92vPcfsuFb
-- ETH: 0xdbcb141a5e5867388db4e6aef21d4743cc95c84f
-- LTC: LKVbc2KeDLwuPChiFYqKF8YFY2FLdCfrrr
-- USDT: 14N4b217RyXoN47vvzRjmMAtdiVLXzMVNF
-
-## Example
-
-1. [Register an account](https://www.bitopro.com/landing_pages/reward?referrer=7907917522) with BitoPro exchange _(referral link)_
+1. [Register an account](https://www.bitopro.com/users/sign_up?referrer=7907917522) with BitoPro exchange _(referral link)_
 2. [Generate API key and secret](https://www.bitopro.com/api), assign relevant permissions to it
 3. Clone this repository, and run `examples/all_api_endpoints.py`
-4. Write your own trading policies and get profits ! 
+4. Write your own trading strategies and get profits ! 
+
+### Linux
 
 ```bash
 cd ~/ && git clone https://github.com/kulisu/bitopro-api-python3
@@ -38,6 +32,22 @@ cd ~/bitopro-api-python3 && cp examples/all_api_endpoints.py .
 
 python3 all_api_endpoints.py
 ```
+
+### Windows
+
+```batch
+cd %USERPROFILE%\Downloads
+git clone https://github.com/kulisu/bitopro-api-python3
+
+cd ~/bitopro-api-python3 && cp examples/all_api_endpoints.py .
+
+# update mail address, API key and secret
+# notepad all_api_endpoints.py
+
+python3 all_api_endpoints.py
+```
+
+### Example
 
 ```python
 #!/usr/bin/env python3
@@ -84,3 +94,13 @@ if __name__ == '__main__':
         if callable(response):
             print(f"[X] {response().decode('utf-8')}")
 ```
+
+## Donation
+
+If you feel this wrapper saved your times, buy me a coffee ?
+
+- BITO: 0x51002b2408badb8cc716fd6fbda287b7d71f5118
+- BTC: 3C2N5czF2z39hfQhNeE37TPKCpfogmj7iw
+- ETH: 0x51002b2408badb8cc716fd6fbda287b7d71f5118
+- LTC: 36tFsojB1GrBraCHkchKWb6VH1HnV3heuW
+- USDT: 3C2N5czF2z39hfQhNeE37TPKCpfogmj7iw
